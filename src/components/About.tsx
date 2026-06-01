@@ -10,16 +10,16 @@ const FOUNDERS_DATA = [
   {
     name: 'Er. Manohar Patidar',
     role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600',
+    image: '/founder.jpg',
     bio: 'Er. Manohar Patidar is the visionary Founder & CEO of THREE L. With an extensive background in heavy civil engineering and high-end construction management, he has directed complex infrastructural transformations and luxury architectural builds. Under his leadership, THREE L has pioneered structural precision, safety integrity, and sustainable execution.',
     quote: 'We build structure not just as physical space, but as legacy monuments of precision, strength, and luxury craftsmanship.'
   },
   {
-    name: 'Er. Rajesh Kumar',
-    role: 'Co-Founder & Chief Architect',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600',
-    bio: 'Er. Rajesh Kumar co-founded THREE L, bringing more than a decade of creative architectural and structural designing experience. He specializes in luxury residential masterworks, green building certification integrations, and high-wind structural damping calculations.',
-    quote: 'Blending architectural beauty with structural physics is our signature. We transform structural designs into premium works of living art.'
+    name: 'Ruchika Patidar',
+    role: 'Co-Founder & Interior Designer',
+    image: '/cofounder.jpg',
+    bio: 'Ruchika Patidar co-founded THREE L, bringing more than a decade of creative architectural and structural designing experience. He specializes in luxury residential masterworks, green building certification integrations, and high-wind structural damping calculations.',
+    quote: 'Believe in the power of creativity. We transform structural designs into premium works of living art.'
   }
 ];
 
@@ -31,7 +31,7 @@ export const About = () => {
       <div className="absolute bottom-1/10 left-1/10 glow-accent w-[350px] h-[350px]" />
 
       <div className="relative z-10 w-[90%] max-w-6xl mx-auto space-y-20">
-        
+
         {/* Row 1: Company Profile Header & Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Company Story & Mission/Vision (Left Columns) */}
@@ -99,13 +99,13 @@ export const About = () => {
                 {/* Founder Image */}
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={founder.image} 
-                    alt={founder.name} 
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
                     className="w-full h-full object-cover object-top transition-transform duration-750 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
-                  
+
                   {/* Floating credentials */}
                   <div className="absolute bottom-4 left-6">
                     <h4 className="text-lg md:text-xl font-bold text-white tracking-wide">
@@ -122,7 +122,7 @@ export const About = () => {
                   <p className="text-xs sm:text-sm text-luxury-muted leading-relaxed font-normal">
                     {founder.bio}
                   </p>
-                  
+
                   {/* Quote block */}
                   <div className="border-l-2 border-luxury-gold pl-4 py-1 italic mt-4">
                     <p className="text-xs sm:text-sm text-luxury-accent font-medium leading-relaxed">

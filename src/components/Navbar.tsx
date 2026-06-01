@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { Button } from './ui/Button';
 import { ThemeToggle } from './ThemeToggle';
-import { COMPANY_NAME, BRAND_NAME, LOGO_PATH } from '@/constants/branding';
+import { BRAND } from '@/constants/branding';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,37 +100,22 @@ export const Navbar = () => {
             onClick={(e) => handleNavClick(e, '#home')}
             className="flex items-center gap-4 group cursor-pointer"
           >
-            {/* Logo Image with fallbacks */}
-            <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-black/10 dark:border-white/5 p-1.5 transition-all duration-300 group-hover:border-luxury-gold/50 shadow-inner">
+            {/* Logo Image */}
+            <div className="relative h-[48px] md:h-[65px] flex items-center justify-center transition-all duration-300">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={LOGO_PATH}
-                alt={`${COMPANY_NAME} Logo`}
-                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+                src={BRAND.logo}
+                alt={`${BRAND.companyName} Logo`}
+                className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Fallback geometric icon if image is missing */}
-              <svg 
-                className="absolute inset-0.5 w-[90%] h-[90%] text-luxury-gold transition-transform duration-500 group-hover:rotate-12" 
-                viewBox="0 0 100 100" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ zIndex: -1 }}
-              >
-                <path d="M50 15L15 80H28L50 38L72 80H85L50 15Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="miter"/>
-                <path d="M50 38L32 72H68L50 38Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="50" cy="52" r="3" fill="currentColor"/>
-              </svg>
             </div>
             
             <div className="flex flex-col">
               <span className="font-display font-black text-lg md:text-xl tracking-wider text-luxury-accent uppercase leading-none group-hover:text-luxury-gold transition-colors duration-300">
-                {COMPANY_NAME}
+                {BRAND.companyName}
               </span>
               <span className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.35em] text-luxury-gold uppercase mt-1 leading-none">
-                {BRAND_NAME}
+                {BRAND.tagline}
               </span>
             </div>
           </a>

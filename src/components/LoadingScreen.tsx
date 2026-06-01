@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { COMPANY_NAME, BRAND_NAME } from '@/constants/branding';
+import { BRAND } from '@/constants/branding';
 
 export const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -16,18 +16,6 @@ export const LoadingScreen = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const logoSvgVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { delay: 0.2, type: 'spring' as const, duration: 1.5, bounce: 0 },
-        opacity: { delay: 0.2, duration: 0.5 }
-      }
-    }
-  };
 
   const textContainerVariants = {
     hidden: { opacity: 0 },
@@ -58,40 +46,20 @@ export const LoadingScreen = () => {
           className="fixed inset-0 z-[100] bg-[#050505] flex flex-col items-center justify-center select-none"
         >
           <div className="flex flex-col items-center gap-6">
-            {/* SVG Logo drawing animation */}
-            <svg
-              className="w-24 h-24 text-luxury-gold"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            {/* Logo Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: 'easeOut' }}
+              className="w-24 h-24 md:w-28 md:h-28 flex items-center justify-center mb-2"
             >
-              <motion.path
-                d="M50 15L15 80H28L50 38L72 80H85L50 15Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinejoin="miter"
-                variants={logoSvgVariants}
-                initial="hidden"
-                animate="visible"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={BRAND.logo}
+                alt={`${BRAND.companyName} Logo`}
+                className="w-full h-full object-contain"
               />
-              <motion.path
-                d="M50 38L32 72H68L50 38Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                variants={logoSvgVariants}
-                initial="hidden"
-                animate="visible"
-              />
-              <motion.circle
-                cx="50"
-                cy="52"
-                r="3"
-                fill="currentColor"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.3 }}
-              />
-            </svg>
+            </motion.div>
 
             {/* Brand text drawing letter by letter */}
             <motion.div
@@ -101,7 +69,7 @@ export const LoadingScreen = () => {
               animate="visible"
             >
               <div className="flex gap-[0.2em]">
-                {Array.from(COMPANY_NAME).map((char, index) => (
+                {Array.from(BRAND.companyName).map((char, index) => (
                   <motion.span
                     key={index}
                     className="font-display font-black text-xl md:text-2xl tracking-[0.15em] text-white"
@@ -112,7 +80,7 @@ export const LoadingScreen = () => {
                 ))}
               </div>
               <div className="flex gap-[0.1em] text-center max-w-[90vw] justify-center flex-wrap">
-                {Array.from(BRAND_NAME.toUpperCase()).map((char, index) => (
+                {Array.from(BRAND.tagline.toUpperCase()).map((char, index) => (
                   <motion.span
                     key={index}
                     className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.3em] text-luxury-gold"

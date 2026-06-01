@@ -3,7 +3,7 @@
 import React from 'react';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowUp, Send } from 'lucide-react';
-import { COMPANY_NAME, BRAND_NAME, LOGO_PATH } from '@/constants/branding';
+import { BRAND } from '@/constants/branding';
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, SOCIAL_LINKS } from '@/constants/contact';
 
 export const Footer = () => {
@@ -42,34 +42,20 @@ export const Footer = () => {
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
               {/* Logo Area */}
-              <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-black/10 dark:border-white/5 p-1.5 shadow-inner">
+              <div className="relative w-14 h-14 flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={LOGO_PATH}
-                  alt={`${COMPANY_NAME} Logo`}
+                  src={BRAND.logo}
+                  alt={`${BRAND.companyName} Logo`}
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
                 />
-                <svg 
-                  className="absolute inset-0.5 w-[90%] h-[90%] text-luxury-gold" 
-                  viewBox="0 0 100 100" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ zIndex: -1 }}
-                >
-                  <path d="M50 15L15 80H28L50 38L72 80H85L50 15Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="miter"/>
-                  <path d="M50 38L32 72H68L50 38Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5"/>
-                  <circle cx="50" cy="52" r="3" fill="currentColor"/>
-                </svg>
               </div>
               <div className="flex flex-col">
                 <h3 className="font-display font-black text-lg md:text-xl tracking-wider text-gradient-gold uppercase leading-none">
-                  {COMPANY_NAME}
+                  {BRAND.companyName}
                 </h3>
                 <span className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.3em] text-luxury-gold uppercase mt-1 leading-none">
-                  {BRAND_NAME}
+                  {BRAND.tagline}
                 </span>
               </div>
             </div>
@@ -203,7 +189,7 @@ export const Footer = () => {
       <div className="border-t border-black/5 dark:border-white/5 py-8 relative z-10">
         <div className="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[10px] text-luxury-muted uppercase tracking-wider text-center md:text-left">
-            &copy; {new Date().getFullYear()} {COMPANY_NAME}. All Rights Reserved. Crafted for structural legacy.
+            &copy; {new Date().getFullYear()} {BRAND.companyName}. All Rights Reserved. Crafted for structural legacy.
           </p>
           <div className="flex items-center gap-6 text-[10px] text-luxury-muted uppercase tracking-wider">
             <a href="#" className="hover:text-luxury-accent transition-colors">Privacy Policy</a>
