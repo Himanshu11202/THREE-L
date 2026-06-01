@@ -30,10 +30,10 @@ export interface DetailedProjectItem {
 
 export const PROJECTS_DATA: DetailedProjectItem[] = [
   {
-    id: 'lumiere-tower',
-    title: 'Lumière Corporate Tower',
+    id: 'patidar-tower',
+    title: 'the patidar Tower',
     category: 'Commercial',
-    location: 'Hudson Yards, New York',
+    location: 'indore, INDIA',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
     year: '2024',
     area: '450,000 sq ft',
@@ -54,32 +54,32 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
       'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800'
     ],
     clientReview: {
-      name: 'Julianne Vance',
+      name: 'himanshu patel',
       role: 'VP of Global Facilities',
-      company: 'Apex Technologies',
+      company: 'patidar towers',
       quote: 'THREE L delivered our flagship corporate headquarters ahead of schedule. Their attention to structural detailing and willingness to solve complex seismic challenges was nothing short of exemplary.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'
     },
     details: [
-      { label: 'Client', value: 'Apex Technologies Inc.' },
+      { label: 'Client', value: 'patidar towers' },
       { label: 'Lead Architect', value: 'Foster + Partners' },
       { label: 'Structural Steel', value: 'Grade 65 High-Strength Steel' },
-      { label: 'Total Budget', value: '$380 Million' }
+      { label: 'Total Budget', value: '12crore' }
     ],
     relatedIds: ['nexus-center', 'aurora-residences', 'helix-viaduct']
   },
   {
     id: 'solaria-estate',
-    title: 'Solaria Cliffside Mansion',
+    title: 'Solaria nivas',
     category: 'Residential',
-    location: 'Malibu, California',
+    location: 'khokhra,mandsaur',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
     year: '2023',
-    area: '18,500 sq ft',
+    area: '1000 sq ft',
     description: 'An architectural masterwork cantilevered over a cliffside, supported by 150-foot deep concrete piers and featuring column-free glass walls. It utilizes a custom seismic isolation system that disconnects the main concrete body from the bedrock foundation during tremors.',
     highlights: [
-      'Cantilevered 75-foot infinity pool',
+      'Cantilevered 10-foot infinity pool',
       'Active seismic bedrock isolators',
       'Custom volcanic stone interior finishes',
       'Hurricane-grade impact-resistant structural glass',
@@ -94,20 +94,20 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800'
     ],
     clientReview: {
-      name: 'Marcus Thorne',
-      role: 'Private Developer',
-      company: 'Thorne Luxury Living',
+      name: 'aniket patidar',
+      role: 'soetware Developer',
+      company: 'new tecno',
       quote: 'The Malibu estate they constructed represents the absolute pinnacle of residential architecture. The column-free glass walls cantilevered over the ocean are an engineering feat that continues to wow every guest.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
     },
     details: [
       { label: 'Client', value: 'The Thorne Trust' },
-      { label: 'Interior Designer', value: 'Zaha Hadid Interiors' },
+      { label: 'Interior Designer', value: 'THREE L' },
       { label: 'Foundation Tech', value: 'Cast-in-place Concrete Micropiles' },
-      { label: 'Total Budget', value: '$42 Million' }
+      { label: 'Total Budget', value: '2crore' }
     ],
-    relatedIds: ['aurora-residences', 'lumiere-tower', 'zephyr-bridge']
+    relatedIds: ['aurora-residences', 'patidar-tower', 'zephyr-bridge']
   },
   {
     id: 'zephyr-bridge',
