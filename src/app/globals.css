@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Light theme variables */
+  --background: #f7f7f9;
+  --foreground: #111112;
+  --luxury-black: #fbfbfd;
+  --luxury-dark: #f0f0f3;
+  --luxury-gray: #e5e5ea;
+  --luxury-light: #d1d1d6;
+  --luxury-accent: #1c1c1e;
+  --luxury-muted: #6e6e73;
+  --luxury-gold: #a68453; /* Darker gold for contrast in light mode */
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --nav-bg: rgba(240, 240, 243, 0.75);
+  --glow-color: rgba(166, 132, 83, 0.03);
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+html.dark {
+  /* Dark theme variables */
+  --background: #050505;
+  --foreground: #f5f5f7;
+  --luxury-black: #050505;
+  --luxury-dark: #0f0f11;
+  --luxury-gray: #1a1a1e;
+  --luxury-light: #2c2c35;
+  --luxury-accent: #e5e5e7;
+  --luxury-muted: #86868b;
+  --luxury-gold: #c5a880; /* Subtle champagne gold */
+  
+  --card-bg: rgba(20, 20, 25, 0.6);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --nav-bg: rgba(15, 15, 17, 0.7);
+  --glow-color: rgba(197, 168, 128, 0.06);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  
+  --color-luxury-black: var(--luxury-black);
+  --color-luxury-dark: var(--luxury-dark);
+  --color-luxury-gray: var(--luxury-gray);
+  --color-luxury-light: var(--luxury-light);
+  --color-luxury-accent: var(--luxury-accent);
+  --color-luxury-muted: var(--luxury-muted);
+  --color-luxury-gold: var(--luxury-gold);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  transition: background-color 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--luxury-light);
+  border-radius: 9999px;
+  border: 2px solid var(--background);
+  transition: background-color 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--luxury-gold);
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s ease;
+}
+
+html.dark .glass-nav {
+  box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.6);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
+}
+
+html.dark .glass-card {
+  background: linear-gradient(135deg, rgba(20, 20, 25, 0.6) 0%, rgba(10, 10, 12, 0.8) 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card:hover {
+  border-color: var(--luxury-gold);
+  box-shadow: 0 20px 50px rgba(166, 132, 83, 0.06);
+}
+
+html.dark .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(197, 168, 128, 0.05), 0 0 30px rgba(255, 255, 255, 0.02);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+html.dark .glass-input {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--luxury-gold);
+  outline: none;
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 30%, var(--luxury-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--luxury-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom glow effects */
+.glow-accent {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
