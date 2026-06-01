@@ -3,6 +3,7 @@
 import React from 'react';
 import { GlassCard } from './ui/GlassCard';
 import { TESTIMONIALS_DATA } from '@/data/siteData';
+import { COMPANY_NAME } from '@/constants/branding';
 import { Quote, Star } from 'lucide-react';
 
 export const Testimonials = () => {
@@ -24,7 +25,7 @@ export const Testimonials = () => {
           </h2>
           <div className="w-16 h-[2px] bg-luxury-gold mx-auto mt-4 mb-6" />
           <p className="text-sm md:text-base text-luxury-muted leading-relaxed">
-            Read what prominent developers, state agencies, and enterprise leaders say about their design-build collaboration with Aura Structures.
+            Read what prominent developers, state agencies, and enterprise leaders say about their design-build collaboration with {COMPANY_NAME}.
           </p>
         </div>
 

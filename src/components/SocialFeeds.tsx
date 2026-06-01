@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Instagram, Facebook, Youtube, Heart, MessageCircle, Share2, Play, ExternalLink, Calendar, X } from 'lucide-react';
 import { GlassCard } from './ui/GlassCard';
 
+import { COMPANY_NAME, BRAND_NAME } from '@/constants/branding';
+
 // TypeScript Interfaces for extensibility (API integration ready)
 export interface InstagramPost {
   id: string;
@@ -43,7 +45,7 @@ const INSTAGRAM_DATA: InstagramPost[] = [
   {
     id: 'ig-1',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600',
-    caption: 'Sunset reflects on the cantilevered glass walls of the Solaria Cliffside Mansion in Malibu. Precision structural engineering makes pure architectural art possible. #AuraStructures #LuxuryRealEstate',
+    caption: 'Sunset reflects on the cantilevered glass walls of the Solaria Cliffside Mansion in Malibu. Precision structural engineering makes pure architectural art possible. #THREE_L #LuxuryRealEstate',
     likes: 1240,
     comments: 42,
     date: '2 hours ago',
@@ -99,10 +101,10 @@ const INSTAGRAM_DATA: InstagramPost[] = [
 const FACEBOOK_DATA: FacebookPost[] = [
   {
     id: 'fb-1',
-    author: 'Aura Structures',
+    author: 'THREE L',
     authorAvatar: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=150',
     date: 'May 28 at 2:30 PM',
-    content: 'We are incredibly honored to announce that Aura Structures has been awarded the 2026 Golden Gate Safety Award for the Helix High-Speed Viaduct development in San Francisco. Reaching 1.5 Million safe field hours is a testament to our onsite safety managers, engineers, and craft workers who implement our zero-harm policies daily. Thank you to the California Transit Board for this recognition!',
+    content: 'We are incredibly honored to announce that THREE L has been awarded the 2026 Golden Gate Safety Award for the Helix High-Speed Viaduct development in San Francisco. Reaching 1.5 Million safe field hours is a testament to our onsite safety managers, engineers, and craft workers who implement our zero-harm policies daily. Thank you to the California Transit Board for this recognition!',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
     likes: 421,
     shares: 48,
@@ -110,10 +112,10 @@ const FACEBOOK_DATA: FacebookPost[] = [
   },
   {
     id: 'fb-2',
-    author: 'Aura Structures',
+    author: 'THREE L',
     authorAvatar: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=150',
     date: 'May 15 at 10:15 AM',
-    content: 'Sustainability is not just a secondary feature; it is the structural core of modern corporate planning. Our Principal Engineer, Arthur Sterling, sat down with Architectural Digest to discuss the rise of Cross-Laminated Timber (CLT) structures and how carbon-sequestering building techniques are reshaping corporate design. Read the full interview to learn more about the engineering behind the Nexus Innovation Hub.',
+    content: 'Sustainability is not just a secondary feature; it is the structural core of modern corporate planning. Our Founder, Er. Manohar Patidar, sat down with Architectural Digest to discuss the rise of Cross-Laminated Timber (CLT) structures and how carbon-sequestering building techniques are reshaping corporate design. Read the full interview to learn more about the engineering behind the Nexus Innovation Hub.',
     likes: 218,
     shares: 15,
     link: 'https://facebook.com'
@@ -251,7 +253,7 @@ export const SocialFeeds = () => {
                     {/* Hover Cover details */}
                     <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                       <div className="flex items-center justify-between text-white/60 text-xs">
-                        <span className="flex items-center gap-1.5"><Instagram size={14} className="text-luxury-gold" /> @aurastructures</span>
+                        <span className="flex items-center gap-1.5"><Instagram size={14} className="text-luxury-gold" /> @{BRAND_NAME}</span>
                         <span>{post.date}</span>
                       </div>
                       
@@ -289,7 +291,7 @@ export const SocialFeeds = () => {
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full overflow-hidden border border-black/10 dark:border-white/10">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={post.authorAvatar} alt="Aura Logo Avatar" className="w-full h-full object-cover" />
+                          <img src={post.authorAvatar} alt={`${COMPANY_NAME} Logo Avatar`} className="w-full h-full object-cover" />
                         </div>
                         <div>
                           <h4 className="text-sm font-bold text-luxury-accent flex items-center gap-1.5">

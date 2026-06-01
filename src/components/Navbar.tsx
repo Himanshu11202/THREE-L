@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { Button } from './ui/Button';
 import { ThemeToggle } from './ThemeToggle';
+import { COMPANY_NAME, BRAND_NAME, LOGO_PATH } from '@/constants/branding';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ export const Navbar = () => {
       // Simple scroll spy logic
       const sections = NAV_ITEMS.map((item) => item.href.substring(1));
       let currentSection = 'home';
-      
+
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
@@ -56,10 +57,10 @@ export const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
-    
+
     if (href.startsWith('/#') || href.startsWith('#')) {
       const targetId = href.replace(/^\/?#/, '');
-      
+
       if (!isHome) {
         // Redirect to home with hash
         router.push(`/#${targetId}`);
@@ -87,36 +88,49 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-6xl rounded-full ${
-          scrolled 
-            ? 'top-4 glass-nav py-2.5 px-6' 
+        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-6xl rounded-full ${scrolled
+            ? 'top-4 glass-nav py-2.5 px-6'
             : 'top-6 bg-transparent border-transparent py-4 px-6 md:px-8'
-        }`}
+          }`}
       >
         <div className="flex items-center justify-between">
-          {/* SVG Logo & Brand */}
-          <a 
-            href="#home" 
+          {/* Logo & Brand Name */}
+          <a
+            href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-3 group cursor-pointer"
+            className="flex items-center gap-4 group cursor-pointer"
           >
-            <svg 
-              className="w-8 h-8 text-luxury-gold transition-transform duration-500 group-hover:rotate-12" 
-              viewBox="0 0 100 100" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Premium geometric architecture line logo */}
-              <path d="M50 15L15 80H28L50 38L72 80H85L50 15Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="miter"/>
-              <path d="M50 38L32 72H68L50 38Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5"/>
-              <circle cx="50" cy="52" r="3" fill="currentColor"/>
-            </svg>
+            {/* Logo Image with fallbacks */}
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-white/5 border border-black/10 dark:border-white/5 p-1.5 transition-all duration-300 group-hover:border-luxury-gold/50 shadow-inner">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={LOGO_PATH}
+                alt={`${COMPANY_NAME} Logo`}
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              {/* Fallback geometric icon if image is missing */}
+              <svg 
+                className="absolute inset-0.5 w-[90%] h-[90%] text-luxury-gold transition-transform duration-500 group-hover:rotate-12" 
+                viewBox="0 0 100 100" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ zIndex: -1 }}
+              >
+                <path d="M50 15L15 80H28L50 38L72 80H85L50 15Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="miter"/>
+                <path d="M50 38L32 72H68L50 38Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="50" cy="52" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            
             <div className="flex flex-col">
-              <span className="font-display font-black text-sm md:text-base tracking-widest text-luxury-accent uppercase leading-none">
-                AURA
+              <span className="font-display font-black text-lg md:text-xl tracking-wider text-luxury-accent uppercase leading-none group-hover:text-luxury-gold transition-colors duration-300">
+                {COMPANY_NAME}
               </span>
-              <span className="font-sans font-semibold text-[8px] tracking-[0.25em] text-luxury-gold uppercase mt-0.5 leading-none">
-                STRUCTURES
+              <span className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.35em] text-luxury-gold uppercase mt-1 leading-none">
+                {BRAND_NAME}
               </span>
             </div>
           </a>
@@ -131,9 +145,8 @@ export const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`px-4 py-2 text-[10px] uppercase tracking-widest font-semibold rounded-full relative transition-colors duration-300 ${
-                    isActive ? 'text-luxury-gold dark:text-white' : 'text-luxury-muted hover:text-luxury-accent'
-                  }`}
+                  className={`px-4 py-2 text-[10px] uppercase tracking-widest font-semibold rounded-full relative transition-colors duration-300 ${isActive ? 'text-luxury-gold dark:text-white' : 'text-luxury-muted hover:text-luxury-accent'
+                    }`}
                 >
                   {isActive && (
                     <motion.span
@@ -194,11 +207,10 @@ export const Navbar = () => {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`py-2 px-4 rounded-xl text-xs font-semibold tracking-widest uppercase transition-all ${
-                      isActive 
-                        ? 'bg-luxury-gold/10 border border-luxury-gold/25 text-luxury-gold' 
+                    className={`py-2 px-4 rounded-xl text-xs font-semibold tracking-widest uppercase transition-all ${isActive
+                        ? 'bg-luxury-gold/10 border border-luxury-gold/25 text-luxury-gold'
                         : 'text-luxury-muted hover:text-luxury-accent hover:bg-black/5 dark:hover:bg-white/5'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </a>

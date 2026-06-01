@@ -3,6 +3,7 @@
 import React from 'react';
 import { GlassCard } from './ui/GlassCard';
 import { WHY_CHOOSE_US_DATA } from '@/data/siteData';
+import { COMPANY_NAME } from '@/constants/branding';
 import { ShieldCheck, Activity, Award, Clock, Cpu, Smile, LucideProps } from 'lucide-react';
 
 const iconMap: Record<string, React.ComponentType<LucideProps>> = {
@@ -28,14 +29,14 @@ export const WhyChooseUs = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-[10px] md:text-xs uppercase tracking-widest font-semibold text-luxury-gold mb-2 block">
-            The Aura Standard
+            The {COMPANY_NAME} Standard
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-gradient">
             Why Partner With Us
           </h2>
           <div className="w-16 h-[2px] bg-luxury-gold mx-auto mt-4 mb-6" />
           <p className="text-sm md:text-base text-luxury-muted leading-relaxed">
-            Discerning corporate clients and private owners select Aura Structures for our unmatched structural safety, rigorous engineering benchmarks, and luxury execution.
+            Discerning corporate clients and private owners select {COMPANY_NAME} for our unmatched structural safety, rigorous engineering benchmarks, and luxury execution.
           </p>
         </div>
 

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/Button';
+import { COMPANY_NAME } from '@/constants/branding';
 import { SITE_INFO } from '@/data/siteData';
 
 export const Hero = () => {
@@ -87,7 +88,7 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
           className="text-sm sm:text-base md:text-lg lg:text-xl text-luxury-muted font-normal max-w-3xl leading-relaxed mb-10"
         >
-          Aura Structures delivers bespoke civil engineering, corporate complexes, and elite residential developments. We fuse advanced structural safety with avant-garde architectural beauty.
+          {COMPANY_NAME} delivers bespoke civil engineering, corporate complexes, and elite residential developments. We fuse advanced structural safety with avant-garde architectural beauty.
         </motion.p>
 
         {/* Call to Actions */}

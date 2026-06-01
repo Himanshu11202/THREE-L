@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from './ui/GlassCard';
 import { Button } from './ui/Button';
-import { SITE_INFO } from '@/data/siteData';
+import { COMPANY_NAME } from '@/constants/branding';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } from '@/constants/contact';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 
 export const Contact = () => {
@@ -84,8 +85,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-luxury-muted font-bold">Call Counsel</p>
-                  <a href={`tel:${SITE_INFO.phone}`} className="text-xs sm:text-sm text-white hover:text-luxury-gold font-medium transition-colors">
-                    {SITE_INFO.phone}
+                  <a href={`tel:${CONTACT_PHONE}`} className="text-xs sm:text-sm text-white hover:text-luxury-gold font-medium transition-colors">
+                    {CONTACT_PHONE}
                   </a>
                 </div>
               </div>
@@ -97,8 +98,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-luxury-muted font-bold">Email Proposal</p>
-                  <a href={`mailto:${SITE_INFO.email}`} className="text-xs sm:text-sm text-white hover:text-luxury-gold font-medium transition-colors">
-                    {SITE_INFO.email}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-xs sm:text-sm text-white hover:text-luxury-gold font-medium transition-colors">
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
               </div>
@@ -111,7 +112,7 @@ export const Contact = () => {
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-luxury-muted font-bold">Global Headquarters</p>
                   <p className="text-xs sm:text-sm text-white font-medium">
-                    {SITE_INFO.address}
+                    {CONTACT_ADDRESS}
                   </p>
                 </div>
               </div>
@@ -135,7 +136,7 @@ export const Contact = () => {
             <div className="hidden lg:block h-32 rounded-2xl border border-white/5 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] relative overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem]" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[10px] uppercase tracking-widest text-luxury-muted/70 font-semibold font-display">Aura Architecture Drafting Grid</span>
+                <span className="text-[10px] uppercase tracking-widest text-luxury-muted/70 font-semibold font-display">{COMPANY_NAME} Drafting Grid</span>
               </div>
             </div>
 
@@ -258,11 +259,11 @@ export const Contact = () => {
                         Proposal Received Successfully
                       </h3>
                       <p className="text-xs sm:text-sm text-luxury-muted max-w-sm mx-auto leading-relaxed">
-                        Thank you, <span className="text-white font-medium">{formData.name}</span>. An Aura senior structural engineer will reach out to you at <span className="text-white font-medium">{formData.email}</span> within 24 business hours.
+                        Thank you, <span className="text-white font-medium">{formData.name}</span>. A {COMPANY_NAME} senior structural engineer will reach out to you at <span className="text-white font-medium">{formData.email}</span> within 24 business hours.
                       </p>
                     </div>
                     <p className="text-[10px] text-luxury-gold uppercase tracking-widest font-bold animate-pulse">
-                      Consultation Code: AURA-{Math.floor(1000 + Math.random() * 9000)}
+                      Consultation Code: {COMPANY_NAME.replace(/\s+/g, '').toUpperCase()}-{Math.floor(1000 + Math.random() * 9000)}
                     </p>
                   </motion.div>
                 )}
@@ -275,4 +276,5 @@ export const Contact = () => {
     </section>
   );
 };
+
 export default Contact;

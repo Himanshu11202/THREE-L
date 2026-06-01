@@ -57,7 +57,7 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
       name: 'Julianne Vance',
       role: 'VP of Global Facilities',
       company: 'Apex Technologies',
-      quote: 'Aura Structures delivered our flagship corporate headquarters ahead of schedule. Their attention to structural detailing and willingness to solve complex seismic challenges was nothing short of exemplary.',
+      quote: 'THREE L delivered our flagship corporate headquarters ahead of schedule. Their attention to structural detailing and willingness to solve complex seismic challenges was nothing short of exemplary.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'
     },
@@ -143,7 +143,7 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
     },
     details: [
       { label: 'Client', value: 'Washington Dept of Transportation' },
-      { label: 'Design-Build Partner', value: 'Aura Structures & AECOM' },
+      { label: 'Design-Build Partner', value: 'THREE L & AECOM' },
       { label: 'Cable Type', value: 'Carbon-Fiber Reinforced Polymer' },
       { label: 'Total Budget', value: '$840 Million' }
     ],
@@ -177,7 +177,7 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
       name: 'Julianne Vance',
       role: 'VP of Global Facilities',
       company: 'Apex Technologies',
-      quote: 'Aura Structures has completely redefined our expectations. The Nexus Hub is a model of sustainability and engineering elegance. The timber layout matches our green objectives perfectly.',
+      quote: 'THREE L has completely redefined our expectations. The Nexus Hub is a model of sustainability and engineering elegance. The timber layout matches our green objectives perfectly.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'
     },
@@ -257,7 +257,7 @@ export const PROJECTS_DATA: DetailedProjectItem[] = [
       name: 'Sarah Patel',
       role: 'Director of Infrastructure',
       company: 'Bay Area Development',
-      quote: 'Aura Structures has been an invaluable asset to this regional expansion. The Helix Viaduct is a marvel of urban planning, civil engineering, and public transit optimization.',
+      quote: 'THREE L has been an invaluable asset to this regional expansion. The Helix Viaduct is a marvel of urban planning, civil engineering, and public transit optimization.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'
     },

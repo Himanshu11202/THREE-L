@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { COMPANY_NAME, BRAND_NAME } from '@/constants/branding';
+
 export const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -99,24 +101,24 @@ export const LoadingScreen = () => {
               animate="visible"
             >
               <div className="flex gap-[0.2em]">
-                {Array.from('AURA').map((char, index) => (
+                {Array.from(COMPANY_NAME).map((char, index) => (
                   <motion.span
                     key={index}
                     className="font-display font-black text-xl md:text-2xl tracking-[0.15em] text-white"
                     variants={letterVariants}
                   >
-                    {char}
+                    {char === ' ' ? '\u00A0' : char}
                   </motion.span>
                 ))}
               </div>
-              <div className="flex gap-[0.1em]">
-                {Array.from('STRUCTURES').map((char, index) => (
+              <div className="flex gap-[0.1em] text-center max-w-[90vw] justify-center flex-wrap">
+                {Array.from(BRAND_NAME.toUpperCase()).map((char, index) => (
                   <motion.span
                     key={index}
-                    className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.4em] text-luxury-gold"
+                    className="font-sans font-semibold text-[8px] md:text-[9px] tracking-[0.3em] text-luxury-gold"
                     variants={letterVariants}
                   >
-                    {char}
+                    {char === ' ' ? '\u00A0' : char}
                   </motion.span>
                 ))}
               </div>

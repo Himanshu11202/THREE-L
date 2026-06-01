@@ -52,25 +52,25 @@ export interface TestimonialItem {
 }
 
 export const SITE_INFO = {
-  name: 'AURA STRUCTURES',
+  name: 'THREE L',
   tagline: 'Sculpting Luxury, Engineering Legacies',
-  phone: '+1 (800) 420-AURA',
-  email: 'contact@aurastructures.com',
-  address: 'Level 50, One World Trade, New York, NY 10007',
+  phone: '9343099916',
+  email: 'Manohar2020@gmail.com',
+  address: 'mandsaur,madhya pradesh,458001',
 };
 
 export const FOUNDER_INFO: FounderInfo = {
-  name: 'Arthur V. Sterling',
-  role: 'Founder & Principal Engineer',
+  name: 'Er. Manohar Patidar',
+  role: 'Founder & CEO',
   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600',
-  bio: 'With over three decades of visionary leadership in structural design, Arthur Sterling has directed the engineering of iconic skylines across five continents. Under his guidance, Aura Structures has pioneered architectural resilience, merging state-of-the-art physics with high-end modern art.',
-  quote: 'We do not merely construct buildings; we sculpt monuments that stand as a testament to human potential and engineering excellence.'
+  bio: 'Er. Manohar Patidar is the visionary Founder & CEO of THREE L. With an extensive background in heavy civil engineering and high-end construction management, he has directed complex infrastructural transformations and luxury architectural builds. Under his leadership, THREE L has pioneered structural precision, safety integrity, and sustainable execution.',
+  quote: 'We build structure not just as physical space, but as legacy monuments of precision, strength, and luxury craftsmanship.'
 };
 
 export const STORY_INFO = {
   title: 'An Unwavering Legacy of Precision',
   paragraphs: [
-    'Founded in 1998, Aura Structures emerged from a desire to bridge the gap between architectural poetry and heavy-duty structural feasibility. We started as an elite structural consultancy and quickly grew into a full-cycle design-build firm catering to high-profile commercial and residential clients.',
+    'Founded in 2020, THREE L emerged from a desire to bridge the gap between architectural poetry and heavy-duty structural feasibility. We started as an elite structural consultancy and quickly grew into a full-cycle design-build firm catering to high-profile commercial and residential clients.',
     'Over the years, we have mastered the art of managing complex engineering undertakings—from sky-bridges suspended in high-wind corridors to luxurious seaside estates built on shifting terrains. Every project is executed with an uncompromising focus on structural integrity, cutting-edge materials, and luxury finishes.'
   ],
   mission: 'To construct timeless, highly-engineered spaces that elevate the human experience, while implementing sustainable practices that safeguard our planet’s future.',
@@ -278,16 +278,16 @@ export const GALLERY_DATA: GalleryItem[] = [
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
     id: 'test-1',
-    name: 'Julianne Vance',
+    name: 'lorane',
     role: 'VP of Global Facilities',
     company: 'Apex Technologies',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
-    quote: 'Aura Structures delivered our flagship corporate headquarters ahead of schedule. Their attention to structural detailing and willingness to solve complex seismic challenges was nothing short of exemplary.',
+    quote: 'THREE L delivered our flagship corporate headquarters ahead of schedule. Their attention to structural detailing and willingness to solve complex seismic challenges was nothing short of exemplary.',
     rating: 5
   },
   {
     id: 'test-2',
-    name: 'Marcus Thorne',
+    name: 'Himanshu patidar',
     role: 'Private Developer',
     company: 'Thorne Luxury Living',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400',
@@ -296,7 +296,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
   },
   {
     id: 'test-3',
-    name: 'Sarah Patel',
+    name: 'Muskan Patel',
     role: 'Director of Infrastructure',
     company: 'Bay Area Development',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
@@ -306,8 +306,8 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
 ];
 
 export const STATS_DATA = [
-  { value: 124, suffix: '+', label: 'Projects Completed' },
-  { value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { value: 28, suffix: '', label: 'Years Experience' },
+  { value: 300, suffix: '+', label: 'Projects Completed' },
+  { value: 100, suffix: '%', label: 'Client Satisfaction' },
+  { value: 10, suffix: '+', label: 'Years Experience' },
   { value: 75, suffix: '+', label: 'Engineers & Architects' }
 ];
